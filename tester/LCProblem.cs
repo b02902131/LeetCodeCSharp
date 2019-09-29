@@ -4,6 +4,17 @@ namespace tester
 {
     public interface ILCProblem
     {
-        List<ILCTestCase> TestCases { get; }
+        void PrepareTester();
+        void AddTestCase();
+        void SetSolution(int solutionIndex);
+        void RunTest();
+    }
+
+    public class TestProblem : ILCProblem
+    {
+        public void PrepareTester() { }
+        public void AddTestCase() { }
+        public void SetSolution(int solutionIndex) { }
+        public void RunTest() { }
     }
 }

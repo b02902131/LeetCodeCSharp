@@ -1,19 +1,19 @@
 namespace tester
 {
-    public interface ILCTestCase
+    public interface ILCTestCase<T1, T2>
     {
-        string Input { get; }
-        string Output { get; }
+        T1 Input { get; }
+        T2 Output { get; }
     }
 
-    public class LCTestCase
+    public class LCTestCase<T1, T2> : ILCTestCase<T1, T2>
     {
-        string m_Input;
-        string m_Output;
-        public string Input { get { return m_Input; } }
-        public string Output { get { return m_Output; } }
+        T1 m_Input;
+        T2 m_Output;
+        public T1 Input { get { return m_Input; } }
+        public T2 Output { get { return m_Output; } }
 
-        public LCTestCase(string input, string output)
+        public LCTestCase(T1 input, T2 output)
         {
             m_Input = input;
             m_Output = output;
