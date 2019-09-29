@@ -30,8 +30,13 @@ namespace LeetCodeCSharp
                     {
                         return new LCProblem7();
                     }
+                case 8:
+                    {
+                        return new LCProblem8();
+                    }
                 default:
                     {
+                        Console.WriteLine($"Warning! Problem-{index} has not yet added into GetProblem()");
                         return new TestProblem();
                     }
             }
