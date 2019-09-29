@@ -1,4 +1,4 @@
-# LeetCode C
+# LeetCode C-Sharp
 
 ## 專案目的
 
@@ -7,6 +7,18 @@
 - 練習 C-sharp
 
 ## Instruction
+
+### 必要條件
+
+- 安裝 Visual Studio Code
+- 安裝 .NET Core SDK
+- 安裝適用於 Visual Studio Code 的 C# 擴充功能
+
+### 執行程式
+
+```terminal
+$ dotnet run
+```
 
 ## Reference
 
