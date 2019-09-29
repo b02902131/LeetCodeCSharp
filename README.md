@@ -17,9 +17,10 @@
 ### 執行程式
 
 ```terminal
-$ dotnet run
+$ dotnet run [problemIndex] [solutionIndex]
 ```
 
 ## Reference
 
 - [C# 與 Visual Studio Code 使用者入門](https://docs.microsoft.com/zh-tw/dotnet/core/tutorials/with-visual-studio-code)
+- [Generics (C# Programming Guide)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/generics/index)
