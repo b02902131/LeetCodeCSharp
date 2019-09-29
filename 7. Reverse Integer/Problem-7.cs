@@ -18,6 +18,11 @@ namespace problems
             m_Tester.AddTestCase("123", "321");
             m_Tester.AddTestCase("-123", "-321");
             m_Tester.AddTestCase("120", "21");
+            m_Tester.AddTestCase("2147483647", "0");
+            m_Tester.AddTestCase("-2147483648", "0");
+            m_Tester.AddTestCase("1463847412", "2147483641");
+            m_Tester.AddTestCase("2147483641", "1463847412");
+            m_Tester.AddTestCase("1534236469", "0");
         }
 
         public void SetSolution(int solutionIndex)
