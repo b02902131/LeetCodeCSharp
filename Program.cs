@@ -1,4 +1,5 @@
 ﻿using System;
+using tester;
 
 namespace LeetCodeCSharp
 {
@@ -6,7 +7,8 @@ namespace LeetCodeCSharp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            MyClass c1 = new MyClass();
+            Console.WriteLine($"Hello World! {c1.ReturnMessage()}");
         }
     }
 }
