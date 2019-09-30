@@ -2,7 +2,7 @@ using System;
 
 namespace solutions
 {
-    public abstract class LCPxxxSolutionTwoInput : LCVerboseSolutionTwoInput<string, string, string>
+    public abstract class LCProblem_Solution : LCVerboseSolutionTwoInput<string, string, string>
     {
         public abstract string LeetCodeFunctionName(string input1, string input2);
 
@@ -12,7 +12,7 @@ namespace solutions
         }
     }
 
-    public class LCP8xxxTwoInputSolution0 : LCPxxxSolutionTwoInput
+    public class LCProblem_SolutionXXX : LCProblem_Solution
     {
         public override string LeetCodeFunctionName(string input1, string input2)
         {
