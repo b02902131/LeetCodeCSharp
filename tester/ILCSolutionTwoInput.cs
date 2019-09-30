@@ -26,6 +26,6 @@ namespace solutions
             Console.WriteLine(msg);
         }
 
-        public abstract T2 Solve(T1 input, T2 output);
+        public abstract T3 Solve(T1 input, T2 output);
     }
 }
