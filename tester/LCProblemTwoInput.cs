@@ -1,7 +1,8 @@
 using System.Collections.Generic;
 using solutions;
+using tester;
 
-namespace tester
+namespace problems
 {
     public class LCProblemTwoInputExample : ILCProblem
     {
