@@ -4,7 +4,7 @@ namespace solutions
 {
     public interface ILCVerboseSolutionTwoInput<T1, T2, T3>
     {
-        T2 Solve(T1 input, T2 output2);
+        T3 Solve(T1 input, T2 output2);
         void SetVerbose(bool verbose);
         void DebugWriteLine(string msg);
     }
