@@ -26,6 +26,10 @@ namespace LeetCodeCSharp
         {
             switch (index)
             {
+                case 4:
+                    {
+                        return new LCProblem4();
+                    }
                 case 7:
                     {
                         return new LCProblem7();
