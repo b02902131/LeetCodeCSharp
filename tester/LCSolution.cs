@@ -33,4 +33,22 @@ namespace solutions
 
         public abstract T2 Solve(T1 input);
     }
+
+    public abstract class LCPxxxSolution : LCVerboseSolution<string, string>
+    {
+        public abstract string LeetCodeFunctionName(string input);
+
+        public override string Solve(string x)
+        {
+            return LeetCodeFunctionName(x);
+        }
+    }
+
+    public class LCP8xxxolution0 : LCPxxxSolution
+    {
+        public override string LeetCodeFunctionName(string input)
+        {
+            return "example";
+        }
+    }
 }
