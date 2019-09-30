@@ -22,7 +22,7 @@ namespace problems
                 case 0:
                 default:
                     {
-                        m_Tester.SetSolution(new LCP8xxxTwoInputSolution0());
+                        m_Tester.SetSolution(new LCProblemSolutionTwoInput0());
                         break;
                     }
             }
