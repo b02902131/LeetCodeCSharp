@@ -1,16 +1,9 @@
 using System.Collections.Generic;
 using solutions;
+using tester;
 
-namespace tester
+namespace problems
 {
-    public interface ILCProblem
-    {
-        void PrepareTester();
-        void AddTestCase();
-        void SetSolution(int solutionIndex);
-        void RunTest();
-    }
-
     public class LCProblemXXX : ILCProblem
     {
         LCTesterV2<string, string> m_Tester;
