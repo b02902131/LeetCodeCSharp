@@ -22,7 +22,7 @@ namespace problems
                 case 0:
                 default:
                     {
-                        m_Tester.SetSolution(new LCP8xxxSolution0());
+                        m_Tester.SetSolution(new LCPxxxSolution0());
                         break;
                     }
             }
