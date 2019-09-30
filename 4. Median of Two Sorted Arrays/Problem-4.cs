@@ -4,16 +4,18 @@ using tester;
 
 namespace problems
 {
-    public class LCProblemXXX : ILCProblem
+    public class LCProblem4 : ILCProblem
     {
-        LCTesterV2<string, string> m_Tester;
+        LCTesterTwoInput<int[], int[], double> m_Tester;
         public void PrepareTester()
         {
-            m_Tester = new LCTesterV2<string, string>();
+            m_Tester = new LCTesterTwoInput<int[], int[], double>();
         }
         public void AddTestCase()
         {
-            m_Tester.AddTestCase("example", "example");
+            m_Tester.AddTestCase(new int[] { 1, 3 }, new int[] { 2 }, 2.0f);
+            m_Tester.AddTestCase(new int[] { 1, 2 }, new int[] { 3, 4 }, 2.5f);
+            m_Tester.AddTestCase(new int[] { 1 }, new int[] { 2, 3, 5 }, 2.5f);
         }
         public void SetSolution(int solutionIndex)
         {
@@ -22,7 +24,7 @@ namespace problems
                 case 0:
                 default:
                     {
-                        m_Tester.SetSolution(new LCPxxxSolution0());
+                        m_Tester.SetSolution(new LCProblem4Solution0());
                         break;
                     }
             }

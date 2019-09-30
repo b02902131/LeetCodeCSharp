@@ -94,7 +94,12 @@ namespace tester
             var correct = answer.Equals(output);
             var correctSign = correct ? "O" : "X";
             Console.Write($"\t({correctSign}) ");
-            Console.WriteLine($"TestCase({i}): input = {input1}, {input2}, output = {output}, answer = {answer}");
+            Console.Write($"TestCase({i}): ");
+            Console.Write($"input = ");
+            Console.Write($"{LCTesterHelper.ParseTestData(input1)}, ");
+            Console.Write($"{LCTesterHelper.ParseTestData(input2)}, ");
+            Console.Write($"output = ");
+            Console.Write($"{LCTesterHelper.ParseTestData(answer)}\n");
             return correct;
         }
     }
