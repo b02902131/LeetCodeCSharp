@@ -32,7 +32,7 @@ namespace solutions
         }
     }
 
-    public class LCP8xxxSolution0 : LCPxxxSolution
+    public class LCPxxxSolution0 : LCPxxxSolution
     {
         public override string LeetCodeFunctionName(string input)
         {
