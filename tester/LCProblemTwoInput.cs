@@ -3,24 +3,16 @@ using solutions;
 
 namespace tester
 {
-    public interface ILCProblem
+    public class LCProblemTwoInputExample : ILCProblem
     {
-        void PrepareTester();
-        void AddTestCase();
-        void SetSolution(int solutionIndex);
-        void RunTest();
-    }
-
-    public class LCProblemXXX : ILCProblem
-    {
-        LCTesterV2<string, string> m_Tester;
+        LCTesterTwoInput<string, string, string> m_Tester;
         public void PrepareTester()
         {
-            m_Tester = new LCTesterV2<string, string>();
+            m_Tester = new LCTesterTwoInput<string, string, string>();
         }
         public void AddTestCase()
         {
-            m_Tester.AddTestCase("example", "example");
+            m_Tester.AddTestCase("example", "example", "example");
         }
         public void SetSolution(int solutionIndex)
         {
@@ -29,7 +21,7 @@ namespace tester
                 case 0:
                 default:
                     {
-                        m_Tester.SetSolution(new LCP8xxxSolution0());
+                        m_Tester.SetSolution(new LCP8xxxTwoInputSolution0());
                         break;
                     }
             }
