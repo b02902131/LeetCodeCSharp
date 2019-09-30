@@ -34,10 +34,14 @@ namespace LeetCodeCSharp
                     {
                         return new LCProblem8();
                     }
+                case 999:
+                    {
+                        return new LCProblemTwoInputExample();
+                    }
                 default:
                     {
                         Console.WriteLine($"Warning! Problem-{index} has not yet added into GetProblem()");
-                        return new TestProblem();
+                        return new LCProblemXXX();
                     }
             }
         }
