@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using tester;
 using problems;
 
@@ -6,8 +7,22 @@ namespace LeetCodeCSharp
 {
     class Program
     {
+        static Dictionary<int, ILCProblem> m_Problems;
+
+        static void RegisterProblems()
+        {
+            m_Problems = new Dictionary<int, ILCProblem>();
+            m_Problems.Add(4, new LCProblem4());
+            m_Problems.Add(6, new LCProblem6());
+            m_Problems.Add(7, new LCProblem7());
+            m_Problems.Add(8, new LCProblem8());
+            m_Problems.Add(999, new LCProblemTwoInputExample());
+        }
+
         static void Main(string[] args)
         {
+            RegisterProblems();
+
             int problemIndex = 0;
             int solutionIndex = 0;
 
@@ -24,30 +39,12 @@ namespace LeetCodeCSharp
 
         static ILCProblem GetProblem(int index)
         {
-            switch (index)
+            if (m_Problems.ContainsKey(index))
             {
-                case 4:
-                    {
-                        return new LCProblem4();
-                    }
-                case 7:
-                    {
-                        return new LCProblem7();
-                    }
-                case 8:
-                    {
-                        return new LCProblem8();
-                    }
-                case 999:
-                    {
-                        return new LCProblemTwoInputExample();
-                    }
-                default:
-                    {
-                        Console.WriteLine($"Warning! Problem-{index} has not yet added into GetProblem()");
-                        return new LCProblemXXX();
-                    }
+                return m_Problems[index];
             }
+
+            throw new Exception($"Warning! Problem-{index} has not yet added into GetProblem()");
         }
     }
 }
