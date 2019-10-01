@@ -22,7 +22,6 @@ namespace LeetCodeCSharp
         static void RegisterProblemsV1()
         {
             RegisterProblemV1(4, new LCProblem4());
-            RegisterProblemV1(6, new LCProblem6());
             RegisterProblemV1(7, new LCProblem7());
             RegisterProblemV1(8, new LCProblem8());
             RegisterProblemV1(999, new LCProblemTwoInputExample());
@@ -30,6 +29,7 @@ namespace LeetCodeCSharp
 
         static void RegisterProblemsV2()
         {
+            RegisterProblemV2(6, new LCProblem6());
             RegisterProblemV2(998, new LCProblemTwoInputV2());
         }
         static void RegisterProblems()

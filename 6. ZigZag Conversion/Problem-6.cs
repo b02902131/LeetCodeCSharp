@@ -1,12 +1,20 @@
+using System;
 using System.Collections.Generic;
 using solutions;
 using tester;
 
 namespace problems
 {
-    public class LCProblem6 : ILCProblem
+    public class LCProblem6 : ILCProblemV2
     {
         LCTesterTwoInput<string, int, string> m_Tester;
+        Dictionary<int, ILCVerboseSolutionTwoInput<string, int, string>> m_Solutions;
+
+        public LCProblem6()
+        {
+            m_Solutions = new Dictionary<int, ILCVerboseSolutionTwoInput<string, int, string>>();
+        }
+
         public void PrepareTester()
         {
             m_Tester = new LCTesterTwoInput<string, int, string>();
@@ -28,18 +36,24 @@ namespace problems
             m_Tester.AddTestCase("ABC", 2, "ACB");
             m_Tester.AddTestCase("ABC", 3, "ABC");
         }
+
+        public void RegisterSolutions()
+        {
+            m_Solutions.Add(0, new LCProblem6Solution0());
+            m_Solutions.Add(1, new LCProblem6Solution1());
+        }
+
         public void SetSolution(int solutionIndex)
         {
-            switch (solutionIndex)
+            if (m_Solutions.ContainsKey(solutionIndex))
             {
-                case 0:
-                default:
-                    {
-                        m_Tester.SetSolution(new LCProblem6Solution0());
-                        break;
-                    }
+                m_Tester.SetSolution(m_Solutions[solutionIndex]);
+                return;
             }
+
+            throw new Exception($"Warning! Solution-{solutionIndex} has not yet registerd");
         }
+
         public void RunTest()
         {
             m_Tester.RunTest();
