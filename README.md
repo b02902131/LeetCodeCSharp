@@ -34,7 +34,7 @@ $ dotnet run [problemIndex] [solutionIndex]
    2. 修改 className（格式為 LCProblem**N**）
    3. 修改 tester params type （共 2 處）
    4. 新增 testCase
-   5. 設定 solution 為剛才新增的 LCProblem**N**Solution0 （預設為 solution 0，亦可再新增其他 solution）
+   5. 在 `RegisterSolutions` 裡面註冊剛才新增的 solution（預設為 solution 0，亦可再新增其他 solution）
 4. 到 Program.cs 的 `RegisterProblems()` 裡面新增 Problem-N
 5. terminal 執行 `$ dotnet run Ｎ`
 
