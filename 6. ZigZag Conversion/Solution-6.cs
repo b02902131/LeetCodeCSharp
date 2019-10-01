@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace solutions
 {
@@ -16,7 +17,31 @@ namespace solutions
     {
         public override string Convert(string s, int numRows)
         {
-            return "";
+            if (numRows == 1) { return s; }
+
+            List<string> rows = new List<string>();
+            for (int i = 0; i < numRows; i++)
+            {
+                rows.Add("");
+            }
+
+            bool isGoingUp = true;
+            int curRow = 0;
+
+            for (int i = 0; i < s.Length; i++)
+            {
+                rows[curRow] += s[i];
+                if (curRow == 0 || curRow == numRows - 1) { isGoingUp = !isGoingUp; }
+                curRow += isGoingUp ? -1 : 1;
+            }
+
+            string ans = "";
+            foreach (string row in rows)
+            {
+                ans += row;
+            }
+
+            return ans;
         }
     }
 

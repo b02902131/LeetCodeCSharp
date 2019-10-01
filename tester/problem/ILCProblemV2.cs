@@ -1,6 +1,6 @@
 namespace problems
 {
-    public interface ILCProblemV2 : ILCProblem
+    public interface ILCProblemV2
     {
         void PrepareTester();
         void AddTestCase();
