@@ -16,6 +16,14 @@ namespace solutions
     {
         public override string Convert(string s, int numRows)
         {
+            return "";
+        }
+    }
+
+    public class LCProblem6Solution1 : LCProblem6Solution
+    {
+        public override string Convert(string s, int numRows)
+        {
             if (numRows == 1) { return s; }
             if (numRows > s.Length) { return s; }
 
