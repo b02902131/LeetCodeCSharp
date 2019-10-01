@@ -26,15 +26,37 @@ namespace LeetCodeCSharp
             int problemIndex = 0;
             int solutionIndex = 0;
 
-            if (args.Length > 0) { problemIndex = Int32.Parse(args[0]); }
-            if (args.Length > 1) { solutionIndex = Int32.Parse(args[1]); }
-            Console.WriteLine($"Run Problem-{problemIndex} with Solution-{solutionIndex}");
+            if (args.Length > 0)
+            {
+                if (args[0] == "all")
+                {
+                    RunAllProblems();
+                    System.Environment.Exit(0);
+                }
+                problemIndex = Int32.Parse(args[0]);
+            }
 
+            if (args.Length > 1) { solutionIndex = Int32.Parse(args[1]); }
+
+            RunProblem(problemIndex, solutionIndex);
+        }
+
+        static void RunProblem(int problemIndex, int solutionIndex)
+        {
+            Console.WriteLine($"Run Problem-{problemIndex} with Solution-{solutionIndex}");
             var problem = GetProblem(problemIndex);
             problem.PrepareTester();
             problem.AddTestCase();
             problem.SetSolution(solutionIndex);
             problem.RunTest();
+        }
+
+        static void RunAllProblems()
+        {
+            foreach (var k in m_Problems.Keys)
+            {
+                RunProblem(k, 0);
+            }
         }
 
         static ILCProblem GetProblem(int index)
