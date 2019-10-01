@@ -18,6 +18,14 @@ namespace tester
             {
                 return String.Format("{0:F2}", data);
             }
+            else if (typeof(T) == typeof(int))
+            {
+                return data.ToString();
+            }
+            else if (data.GetType().GetMethod("ToString") != null)
+            {
+                return data.ToString();
+            }
             return typeof(T).ToString();
         }
 

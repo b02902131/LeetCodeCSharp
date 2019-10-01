@@ -95,9 +95,9 @@ namespace tester
             var correctSign = correct ? "O" : "X";
             Console.Write($"\t({correctSign}) ");
             Console.Write($"TestCase({i}): ");
-            Console.Write($"input = ");
+            Console.Write($"input = (");
             Console.Write($"{LCTesterHelper.ParseTestData(input1)}, ");
-            Console.Write($"{LCTesterHelper.ParseTestData(input2)}, ");
+            Console.Write($"{LCTesterHelper.ParseTestData(input2)}), ");
             Console.Write($"output = ");
             Console.Write($"{LCTesterHelper.ParseTestData(answer)}\n");
             return correct;
