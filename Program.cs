@@ -7,16 +7,36 @@ namespace LeetCodeCSharp
 {
     class Program
     {
-        static Dictionary<int, ILCProblem> m_Problems;
+        static Dictionary<int, ILCProblemV2> m_Problems;
 
+        static void RegisterProblemV1(int index, ILCProblem problem)
+        {
+            m_Problems.Add(index, new LCProblemV1V2Adapter(problem));
+        }
+
+        static void RegisterProblemV2(int index, ILCProblemV2 problemV2)
+        {
+            m_Problems.Add(index, problemV2);
+        }
+
+        static void RegisterProblemsV1()
+        {
+            RegisterProblemV1(4, new LCProblem4());
+            RegisterProblemV1(6, new LCProblem6());
+            RegisterProblemV1(7, new LCProblem7());
+            RegisterProblemV1(8, new LCProblem8());
+            RegisterProblemV1(999, new LCProblemTwoInputExample());
+        }
+
+        static void RegisterProblemsV2()
+        {
+            RegisterProblemV2(998, new LCProblemTwoInputV2());
+        }
         static void RegisterProblems()
         {
-            m_Problems = new Dictionary<int, ILCProblem>();
-            m_Problems.Add(4, new LCProblem4());
-            m_Problems.Add(6, new LCProblem6());
-            m_Problems.Add(7, new LCProblem7());
-            m_Problems.Add(8, new LCProblem8());
-            m_Problems.Add(999, new LCProblemTwoInputExample());
+            m_Problems = new Dictionary<int, ILCProblemV2>();
+            RegisterProblemsV1();
+            RegisterProblemsV2();
         }
 
         static void Main(string[] args)
@@ -47,6 +67,7 @@ namespace LeetCodeCSharp
             var problem = GetProblem(problemIndex);
             problem.PrepareTester();
             problem.AddTestCase();
+            problem.RegisterSolutions();
             problem.SetSolution(solutionIndex);
             problem.RunTest();
         }
@@ -59,14 +80,14 @@ namespace LeetCodeCSharp
             }
         }
 
-        static ILCProblem GetProblem(int index)
+        static ILCProblemV2 GetProblem(int index)
         {
             if (m_Problems.ContainsKey(index))
             {
                 return m_Problems[index];
             }
 
-            throw new Exception($"Warning! Problem-{index} has not yet added into GetProblem()");
+            throw new Exception($"Warning! Problem-{index} has not yet registerd");
         }
     }
 }

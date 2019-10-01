@@ -2,11 +2,11 @@ using System;
 
 namespace solutions
 {
-    public abstract class LCProblemSolutionTwoInput : LCVerboseSolutionTwoInput<string, string, string>
+    public abstract class LCProblemSolutionTwoInput : LCVerboseSolutionTwoInput<int, int, int>
     {
-        public abstract string LeetCodeFunctionName(string input1, string input2);
+        public abstract int LeetCodeFunctionName(int input1, int input2);
 
-        public override string Solve(string x, string y)
+        public override int Solve(int x, int y)
         {
             return LeetCodeFunctionName(x, y);
         }
@@ -14,9 +14,9 @@ namespace solutions
 
     public class LCProblemSolutionTwoInput0 : LCProblemSolutionTwoInput
     {
-        public override string LeetCodeFunctionName(string input1, string input2)
+        public override int LeetCodeFunctionName(int input1, int input2)
         {
-            return "example";
+            return 0;
         }
     }
 }

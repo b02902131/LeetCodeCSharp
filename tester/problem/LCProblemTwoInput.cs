@@ -6,14 +6,14 @@ namespace problems
 {
     public class LCProblemTwoInputExample : ILCProblem
     {
-        LCTesterTwoInput<string, string, string> m_Tester;
+        LCTesterTwoInput<int, int, int> m_Tester;
         public void PrepareTester()
         {
-            m_Tester = new LCTesterTwoInput<string, string, string>();
+            m_Tester = new LCTesterTwoInput<int, int, int>();
         }
         public void AddTestCase()
         {
-            m_Tester.AddTestCase("example", "example", "example");
+            m_Tester.AddTestCase(0, 0, 0);
         }
         public void SetSolution(int solutionIndex)
         {
